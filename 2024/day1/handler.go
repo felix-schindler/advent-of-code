@@ -3,22 +3,14 @@ package day1
 import (
 	"felix-schindler/aoc-24/helper"
 	"log"
-	"os"
 	"slices"
 	"strconv"
 	"strings"
 )
 
 func Handler(call2 bool) {
-	// Read string form text file
-	file, err := os.ReadFile("day1/input.txt")
-	if err != nil {
-		log.Fatal(err)
-	}
-	input := string(file)
-
-	// Split string by line
-	lines := strings.Split(input, "\n")
+	// Get input
+	lines := helper.TextFileByLines("day1/input.txt")
 
 	// Prepare input
 	ints1 := make([]int, 0)
@@ -85,11 +77,7 @@ func part1(ints1, ints2 []int) int {
 }
 
 func part2(ints1, ints2 []int) int {
-	dict := make(map[int]int)
-
-	for _, i := range ints2 {
-		dict[i]++
-	}
+	dict := helper.CountOccurence(ints2)
 
 	sum := 0
 	for _, i := range ints1 {
