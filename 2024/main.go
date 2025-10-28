@@ -7,6 +7,7 @@ import (
 	"felix-schindler/aoc-24/day4"
 	"felix-schindler/aoc-24/day5"
 	"felix-schindler/aoc-24/day6"
+	"felix-schindler/aoc-24/day7"
 	"log"
 	"os"
 )
@@ -25,6 +26,8 @@ func main() {
 		day5.Handler(len(os.Args) > 2)
 	case "6":
 		day6.Handler(len(os.Args) > 2)
+	case "7":
+		day7.Handler(len(os.Args) > 2)
 	default:
 		log.Fatalln("Invalid day")
 	}
