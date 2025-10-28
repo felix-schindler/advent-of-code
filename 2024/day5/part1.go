@@ -25,8 +25,6 @@ func part1(lines []string) int {
 		rules[x] = append(rules[x], y)
 	}
 
-	log.Println("All rules", rules)
-
 	for _, update := range raw_updates {
 		include := true
 		nums := strings.Split(update, ",")
@@ -49,8 +47,6 @@ func part1(lines []string) int {
 			updates = append(updates, update)
 		}
 	}
-
-	log.Println("Valid updates", updates)
 
 	sum := 0
 	for _, valid_update := range updates {
