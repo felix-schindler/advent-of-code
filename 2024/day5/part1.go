@@ -37,8 +37,10 @@ func part1(lines []string) int {
 			if len(rule) > 0 {
 				pre := nums[:i]
 
-				if slices.Contains(pre, num) {
-					include = false
+				for _, y := range rule {
+					if slices.Contains(pre, y) {
+						include = false
+					}
 				}
 			}
 		}
