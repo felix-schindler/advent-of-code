@@ -30,15 +30,20 @@ func part1(lines []string) int {
 		nums := strings.Split(update, ",")
 
 		for i, num := range nums {
-			rule := rules[num]
+			rule, exists := rules[num]
 
-			if len(rule) > 0 {
+			if exists {
 				pre := nums[:i]
 
 				for _, y := range rule {
 					if slices.Contains(pre, y) {
 						include = false
+						break // break outer loop
 					}
+				}
+
+				if !include {
+					break // break outer loop
 				}
 			}
 		}
